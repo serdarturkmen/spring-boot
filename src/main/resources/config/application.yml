@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: demo
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+        implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+
+twitter4j:
+  debug: true
+  oauth:
+    consumer-key: 1234
+    consumer-secret:
+    access-token:
+    access-token-secret:
+
+springfox:
+  documentation:
+    swagger:
+      v2.path:  /api-docs
