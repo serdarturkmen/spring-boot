@@ -1,3 +1,3 @@
 # spring-boot
-swaggerUi authorization
-spring recurity
+* swaggerUi authorization
+* spring security
