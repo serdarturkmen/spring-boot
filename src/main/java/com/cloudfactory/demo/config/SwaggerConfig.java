@@ -18,34 +18,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
-@Configuration
-@EnableSwagger2
+
 public class SwaggerConfig{
-
-    ApiInfo apiInfo() {
-        return new ApiInfoBuilder()
-                .title("API Reference")
-                .version("1.0.0")
-                .build();
-    }
-
-    @Bean
-    public Docket customImplementation(){
-        List<SecurityScheme> schemeList = new ArrayList<>();
-        schemeList.add(new ApiKey(HttpHeaders.AUTHORIZATION, "Authorization", "header"));
-        return new Docket(DocumentationType.SWAGGER_2)
-                .apiInfo(apiInfo())
-                .securitySchemes(schemeList)
-                .select().paths(PathSelectors.any())
-                //.apis(RequestHandlerSelectors.any())  // If you want to list all the apis including springboots own
-                    .apis(RequestHandlerSelectors.basePackage("com.cloudfactory.demo.web.rest"))
-                    .build()
-                .pathMapping("/")
-                .useDefaultResponseMessages(false)
-                .directModelSubstitute(LocalDate.class, String.class)
-                .genericModelSubstitutes(ResponseEntity.class)
-                ;
-    }
 
 
 }
